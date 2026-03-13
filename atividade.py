@@ -1,7 +1,15 @@
 medias = []
 qtd = 3
 for i in range(qtd):
-    temperaturas = list(map(int, input(f"Digite as temperaturas da Cidade {i+1}: ").split()))
+
+    while True:
+        temperaturas = list(map(int, input(f"Digite as temperaturas da Cidade {i+1}: ").split()))
+        
+        if len(temperaturas) != 12:
+            print("Digite exatamente 12 valores de temperaturas para a realização do calculo anual.")
+        else:
+            break
+
     medias.append(sum(temperaturas)/len(temperaturas))
 
 for i, media in enumerate(medias, 1):
